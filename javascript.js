@@ -49,19 +49,22 @@
     alert("Splendid choice, again! You have randomly chosen the field tile. You have become a farmer and shall provide food for your family evermore. You win! (Click OK to see your score!)");
   }
 
-  var scoreMessage = alert("Your final score is: " + score.sum(p1, p2, p3, p4) + " / 100. Thanks for playing!");
-var p1,p2,p3,p4;
+  var p1, p2, p3, p4;
 
   var pointsP1 = {
     true: 25,
     false: 0
   };
 
+
+
   Object.keys(pointsP1).forEach(function(key) {
-    if(ready ===  key) {
-      p1 = pointsP1[key];
+    if(ready) {
+      p1 = 25;
     }
   });
+
+
 
   var pointsP2 = {
     blue: 15,
@@ -72,11 +75,11 @@ var p1,p2,p3,p4;
   };
 
 
-Object.keys(pointsP2).forEach(function(key) {
-  if(meepleColor ===  key) {
-    p2 = pointsP2[key];
-  }
-});
+  Object.keys(pointsP2).forEach(function(key) {
+    if(meepleColor ===  key) {
+      p2 = pointsP2[key];
+    }
+  });
 
   var pointsP3 = {
     road: 0,
@@ -103,17 +106,12 @@ Object.keys(pointsP2).forEach(function(key) {
     }
   });
 
-  //var chosenPoints = {
-    //p1: pointsP1,
-    //p2: pointsP2,
-    //p3: pointsP3,
-    //p4: pointsP4
-  //}
-
   var score = {
     sum: function(p1, p2, p3, p4) {
       return p1 + p2 + p3 + p4;
     }
   };
+
+  var scoreMessage = alert("Your final score is: " + score.sum(p1, p2, p3, p4) + " / 100. Thanks for playing!");
 
 })();
