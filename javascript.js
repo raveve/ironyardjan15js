@@ -2,6 +2,7 @@
 (function () {
   "use strict";
 
+
   var ready = confirm("Salutations! Are you ready to venture into the South of France?");
   if (ready === true) {
     alert("Let's saddle up!");
@@ -9,7 +10,9 @@
     alert("Unfortunately, you must go. Saddle up!");
   };
 
+
   alert("First, you must choose your meeple.");
+
 
   var meepleColor = prompt("What color of meeple do you desire? You may choose from: blue, green, black, yellow or red.").toLowerCase();
   if (meepleColor === "blue") {
@@ -35,6 +38,7 @@
     alert("Splendid choice! You have started a farm. The next tile will be chosen at random by you.");
   };
 
+
   var tileChoice = prompt("The next tile chooses your fate. Roll the imaginary die. Choose: 1, 2, 3 or 4.");
   if (tileChoice === "1") {
     alert("You have not chosen wisely. You have randomly chosen the road tile. Alongside the road you became a thief and were thrown in jail. Game over! (Click OK to see your score!)");
@@ -49,6 +53,7 @@
     alert("Splendid choice, again! You have randomly chosen the field tile. You have become a farmer and shall provide food for your family evermore. You win! (Click OK to see your score!)");
   }
 
+
   var p1, p2, p3, p4;
 
   var pointsP1 = {
@@ -56,15 +61,11 @@
     false: 0
   };
 
-
-
   Object.keys(pointsP1).forEach(function(key) {
     if(ready) {
       p1 = 25;
     }
   });
-
-
 
   var pointsP2 = {
     blue: 15,
@@ -73,7 +74,6 @@
     yellow: 20,
     red: 5
   };
-
 
   Object.keys(pointsP2).forEach(function(key) {
     if(meepleColor ===  key) {
@@ -111,6 +111,7 @@
       return p1 + p2 + p3 + p4;
     }
   };
+
 
   var scoreMessage = alert("Your final score is: " + score.sum(p1, p2, p3, p4) + " / 100. Thanks for playing!");
 
