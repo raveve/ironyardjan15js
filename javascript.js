@@ -2,14 +2,21 @@
 (function () {
   "use strict";
 
+  // Originally was using this method, but it caused NaN for score if "cancel", ie false, is chosen.
+  // var ready = confirm("Salutations! Are you ready to venture into the South of France?");
+  // if (ready === true) {
+  //   alert("Let's saddle up!");
+  // } else {
+  //   alert("Unfortunately, you must go. Saddle up!");
+  // };
 
-  var ready = confirm("Salutations! Are you ready to venture into the South of France?");
-  if (ready === true) {
+
+  var ready = prompt("Salutations! Are you ready to venture into the South of France? If you are ready, type: oui.").toLowerCase();
+  if (ready === "oui") {
     alert("Let's saddle up!");
   } else {
     alert("Unfortunately, you must go. Saddle up!");
   };
-
 
   alert("First, you must choose your meeple.");
 
@@ -57,8 +64,7 @@
   var p1, p2, p3, p4;
 
   var pointsP1 = {
-    true: 25,
-    false: 5
+    oui: 25
   };
 
   Object.keys(pointsP1).forEach(function(key) {
