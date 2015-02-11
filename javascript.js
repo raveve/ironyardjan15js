@@ -58,7 +58,7 @@
 
   var pointsP1 = {
     true: 25,
-    false: 0
+    false: 5
   };
 
   Object.keys(pointsP1).forEach(function(key) {
